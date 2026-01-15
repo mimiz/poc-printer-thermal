@@ -16,7 +16,8 @@ device.open(async function (err) {
 
   // encoding is optional
   const options = {
-    encoding: "GB18030" /* default */,
+   // encoding: "GB18030" /* default */,
+    encoding: "CP857" /* default */,
     width: paperWidth, // default 32
   };
   let printer = new Printer(device, options);
@@ -46,9 +47,10 @@ device.open(async function (err) {
     .drawLine("*")
     .text("MERCI BEAUCOUP")
     .drawLine("*")
+    .encode("utf8")
     // .table(["One", "Two", "Three"])
     .tableCustom([
-      { text: "Pad Thai Crevettes", align: "LEFT", width: 0.5 },
+      { text: "Pad Thaï Crevettes", align: "LEFT", width: 0.5 },
       { text: "1", align: "CENTER", width: 0.1 },
       { text: "12", align: "CENTER", width: 0.1 },
       { text: "12", align: "RIGHT", width: 0.3 },
